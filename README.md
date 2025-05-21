@@ -1,58 +1,49 @@
-# KHDS Dataset Analysis on COVID-19 Vaccination and Mobile Money Usage
+#README: KHDS Dataset Analysis on COVID-19 Vaccination and Mobile Money Usage
+##Project Overview
+In this project, I analyzed data from the Kenya Household Demographic Survey (KHDS) using Stata. My goal was to explore:
+1.	How age, sex, and marital status affect whether people have taken the COVID-19 vaccine.
+2.	How age, sex, marital status, and owning agricultural land influence the use of mobile money services.
+The analysis involved cleaning the data, summarizing key statistics, creating visualizations, running logistic regression models, and performing diagnostic tests to make sure the models are solid.
+#Dataset
+•	The data comes from the KHDS (Kenya Household Demographic Survey).
+•	In my do-file, I used the dataset located at:
+C:\Users\conci\Desktop\KDHS_STATA FILE\KHDS\KHDS\Dataset\KEPR8CDT\KEPR8CFL.DTA
+•	The key variables I focused on are:
+Age (hv105)
+Sex (hv104)
+Marital status (hv115)
+Land ownership (hv244)
+Mobile money use (hv263)
+COVID-19 vaccination status (sh135l)
 
-## Project Overview  
-This Stata project analyzes the Kenya Household Demographic Survey (KHDS) dataset to examine:  
-1. The effect of age, sex, and marital status on the uptake of COVID-19 vaccination.  
-2. The effect of age, sex, marital status, and agricultural land ownership on the use of mobile money services.  
+##Do-file Workflow
+1. Data Preparation and Cleaning
+•	I started by loading the KHDS dataset, making sure to keep the original data intact.
+•	Then I selected the important variables needed for my analysis.
+•	I renamed variables to make their meaning clearer.
+•	I cleaned the data by fixing invalid age entries and creating a binary variable for vaccination status (vaccinated or not).
+•	I created a cleaned-up marital status variable with clear labels.
+•	I grouped ages into categories to help with the analysis.
+•	Finally, I dropped records with missing data on key variables to avoid errors later on.
+2. Descriptive Statistics and Visualization
+•	I generated summary statistics like averages and counts to understand the data better.
+•	I made cross-tabulations to see how vaccination relates to sex and marital status.
+•	I created visualizations to show vaccination rates by sex, marital status, and age groups.
+•	I also visualized mobile money use by marital status, with plans to add more variables in the future.
+3. Regression Analysis
+•	I ran logistic regression models to predict:
+COVID-19 vaccination uptake using age groups, sex, and marital status.
+Mobile money use using age, sex, marital status, and land ownership.
+•	I used the asdoc package to export my regression results into Word documents for easy reporting.
+4. Diagnostic Tests
+•	I checked for multicollinearity using VIF, calculated from a linear regression as an approximation.
+•	I performed the link test to check model specification.
+•	I ran the Hosmer-Lemeshow test to check goodness of fit.
+•	I examined classification statistics to see how well the models predict outcomes.
+•	I analyzed ROC curves to evaluate how well the models discriminate between outcomes.
 
-The analysis includes data cleaning, descriptive statistics, visualizations, logistic regression modeling, and diagnostic tests to validate the models.
+##Output Files
+•	I saved summary statistics and regression outputs as Word documents using asdoc.
+•	I saved graphs as PNG images to illustrate key findings.
+•	Tabulations were also exported as Word documents for easy inclusion in reports.
 
-## Dataset  
-- Source: KHDS (Kenya Household Demographic Survey)    
-- Key variables analyzed:  
-  - age (hv105)  
-  - sex (hv104)  
-  - marital_status (hv115)  
-  - land_ownership (hv244)  
-  - mobile_money_use (hv263)  
-  - covid_vaccine (sh135l)  
-
-## Do-file Workflow  
-1. Data Preparation and Cleaning  
-   - Load the KHDS dataset and preserve the original data.  
-   - Select key variables for the analysis.  
-   - Rename variables for clarity.  
-   - Clean variables (recoding invalid age values, creating binary variables for vaccination status).  
-   - Create a cleaned marital status variable with meaningful labels.  
-   - Generate age groups for stratified analysis.  
-   - Drop observations with missing data on key variables.  
-
-2. Descriptive Statistics and Visualization  
-   - Produce summary statistics (means, frequencies).  
-   - Create cross-tabulations between vaccination and sex/marital status.  
-   - Visualize vaccination uptake by sex, marital status, and age groups.  
-   - Visualize mobile money use by marital status (with scope to add by other variables).  
-
-3. Regression Analysis  
-   - Logistic regression for:  
-     - COVID-19 vaccination uptake ~ age groups, sex, marital status.  
-     - Mobile money usage ~ age, sex, marital status, land ownership.  
-   - Export regression outputs using the asdoc package.  
-
-4. Diagnostic Tests  
-   - Multicollinearity assessed with VIF (using linear regression approximation).  
-   - Model specification check using link test.  
-   - Goodness-of-fit tests (Hosmer-Lemeshow).  
-   - Classification statistics.  
-   - ROC curve analysis for model discrimination.  
-
-## Output Files  
-- Summary statistics and regression outputs exported as Word documents via asdoc.  
-- Graphs saved as PNG files showing key relationships.  
-- Tabulations are exported as Word documents for reporting.  
-
-## Notes  
-- The do-file uses asdoc for exporting outputs; ensure the package is installed.  
-- Missing or invalid responses in survey data are treated as missing and dropped to maintain model integrity.  
-- Logistic regression models are fit with categorical variables appropriately labeled.  
-- VIF is calculated from linear regression as an approximation for multicollinearity in logistic regression.  
