@@ -7,7 +7,7 @@ In this project, I analyzed data from the Kenya Household Demographic Survey (KH
 
 The analysis involved cleaning the data, summarizing key statistics, creating visualizations, running logistic regression models, and performing diagnostic tests to make sure the models are solid.
 
----
+
 
 ## Dataset  
 - The data comes from the KHDS (Kenya Household Demographic Survey).  
@@ -21,7 +21,7 @@ The analysis involved cleaning the data, summarizing key statistics, creating vi
   - Mobile money use (`hv263`)  
   - COVID-19 vaccination status (`sh135l`)  
 
----
+
 
 ## Do-file Workflow
 
@@ -53,14 +53,14 @@ The analysis involved cleaning the data, summarizing key statistics, creating vi
 - I examined classification statistics to see how well the models predict outcomes.  
 - I analyzed ROC curves to evaluate how well the models discriminate between outcomes.
 
----
+
 
 ## Output Files  
 - I saved summary statistics and regression outputs as Word documents using `asdoc`.  
 - I saved graphs as PNG images to illustrate key findings.  
 - Tabulations were also exported as Word documents for easy inclusion in reports.
 
----
+
 
 ## Notes  
 - I treated missing or invalid survey responses as missing data and dropped them to keep the analysis accurate.  
